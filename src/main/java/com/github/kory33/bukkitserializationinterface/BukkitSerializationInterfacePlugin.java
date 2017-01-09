@@ -6,7 +6,6 @@ public class BukkitSerializationInterfacePlugin extends GithubUpdateNotifyPlugin
 
     @Override
     public String getGithubRepository() {
-        // TODO 自動生成されたメソッド・スタブ
-        return null;
+        return "Kory33/BukkitSerializationInterface";
     }
 }
