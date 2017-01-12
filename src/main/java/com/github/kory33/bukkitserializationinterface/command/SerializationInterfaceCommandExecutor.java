@@ -2,6 +2,7 @@ package com.github.kory33.bukkitserializationinterface.command;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.bukkit.ChatColor;
@@ -13,6 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.avaje.ebeaninternal.server.query.BeanCollectionWrapper;
 import com.github.kory33.bukkitserializationinterface.Util;
 
 public class SerializationInterfaceCommandExecutor implements CommandExecutor {
@@ -71,7 +73,7 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
     
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        List<String> listArgs = Arrays.asList(args);
+        List<String> listArgs = new LinkedList<String>(Arrays.asList(args));
         if(listArgs.isEmpty()) {
             return false;
         }
