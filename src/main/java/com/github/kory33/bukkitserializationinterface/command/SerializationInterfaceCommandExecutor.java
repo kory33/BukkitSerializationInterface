@@ -72,6 +72,10 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         List<String> listArgs = Arrays.asList(args);
+        if(listArgs.isEmpty()) {
+            return false;
+        }
+        
         String commandName = listArgs.remove(0);
 
         switch(commandName) {
