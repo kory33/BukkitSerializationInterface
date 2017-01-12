@@ -1,5 +1,5 @@
 name: BukkitSerializationInterface
-main: com.github.kory33.bukkitserializationinterface
+main: com.github.kory33.bukkitserializationinterface.BukkitSerializationInterfacePlugin
 version: 0.0.1-SNAPSHOT
 
 commands:
