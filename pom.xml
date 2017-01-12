@@ -28,6 +28,11 @@
             <artifactId>UpdateNotificationPlugin</artifactId>
             <version>0.1.4-alpha</version>
         </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.17</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

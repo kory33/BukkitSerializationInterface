@@ -14,10 +14,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.avaje.ebeaninternal.server.query.BeanCollectionWrapper;
 import com.github.kory33.bukkitserializationinterface.Util;
 
 public class SerializationInterfaceCommandExecutor implements CommandExecutor {
+    public static final String SERIALIZE_ITEM_ARG = "serializeitem";
+    public static final String DESERIALIZE_ITEM_ARG = "deserializeitem";
     private final JavaPlugin plugin;
     
     public SerializationInterfaceCommandExecutor(JavaPlugin plugin) {
@@ -85,9 +86,9 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
         String commandName = listArgs.remove(0);
 
         switch(commandName) {
-            case "serializeitem":
+            case SERIALIZE_ITEM_ARG:
                 return this.serializeItemStack(sender, listArgs);
-            case "deserializeitem":
+            case DESERIALIZE_ITEM_ARG:
                 return this.deserializeItemStack(sender, listArgs);
             default:
                 return false;
