@@ -25,6 +25,10 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
     }
     
     private boolean itemStackFromSerial(CommandSender sender, List<String> args) {
+        if(args.size() != 2) {
+            return false;
+        }
+        
         String playerName = args.remove(0);
         Player player = this.plugin.getServer().getPlayer(playerName);
         
