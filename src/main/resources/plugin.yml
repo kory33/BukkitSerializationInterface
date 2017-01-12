@@ -5,7 +5,7 @@ version: 0.0.1-SNAPSHOT
 commands:
     serialinterface:
         description: commands related to the interface of item serialization
-        usage: /serialinterface (serialfromitem|(itemfromserial <PlayerId> <serial>))
+        usage: /serialinterface (serializeitem|(deserializeitem <PlayerId> <serial>))
         permission: serializationinterface.usecommand
         permission-message: You do not have /<permission> to execute this command.
 

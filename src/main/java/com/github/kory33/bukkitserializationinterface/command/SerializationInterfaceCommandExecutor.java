@@ -24,7 +24,7 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
         this.plugin = plugin;
     }
     
-    private boolean itemStackFromSerial(CommandSender sender, List<String> args) {
+    private boolean deserializeItemStack(CommandSender sender, List<String> args) {
         if(args.size() != 2) {
             return false;
         }
@@ -58,7 +58,7 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
         return true;
     }
     
-    private boolean serialFromItemStack(CommandSender sender, List<String> listArgs) {
+    private boolean serializeItemStack(CommandSender sender, List<String> listArgs) {
         if(!(sender instanceof Player)) {
             sender.sendMessage("The command is only available for players.");
             return true;
@@ -85,10 +85,10 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
         String commandName = listArgs.remove(0);
 
         switch(commandName) {
-            case "serialfromitem":
-                return this.serialFromItemStack(sender, listArgs);
-            case "itemfromserial":
-                return this.itemStackFromSerial(sender, listArgs);
+            case "serializeitem":
+                return this.serializeItemStack(sender, listArgs);
+            case "deserializeitem":
+                return this.deserializeItemStack(sender, listArgs);
             default:
                 return false;
         }
