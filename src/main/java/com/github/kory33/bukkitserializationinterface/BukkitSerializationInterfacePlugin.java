@@ -7,7 +7,7 @@ public class BukkitSerializationInterfacePlugin extends GithubUpdateNotifyPlugin
     @Override
     public void onEnable() {
         super.onEnable();
-        this.getCommand("serialinterface").setExecutor(new SerializationInterfaceCommandExecutor());
+        this.getCommand("serialinterface").setExecutor(new SerializationInterfaceCommandExecutor(this));
     }
     
     @Override
