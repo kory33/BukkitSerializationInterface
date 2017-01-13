@@ -72,7 +72,7 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
                     "Could not get item to be serialized. It should be in your main hand.");
             return true;
         }
-        playerSender.sendMessage(Util.serializeItem(itemStack));
+        playerSender.sendMessage(Util.serializeItem(itemStack, this.plugin.getLogger()));
         return true;
     }
     
