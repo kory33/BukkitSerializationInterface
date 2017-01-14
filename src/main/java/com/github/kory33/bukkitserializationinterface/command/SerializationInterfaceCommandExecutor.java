@@ -40,7 +40,7 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
         
         ItemStack itemStack = null;
         try {
-            itemStack = Util.deserializeItem(args.remove(0));
+            itemStack = Util.deserializeItem(args.remove(0), this.plugin.getLogger());
         } catch (InvalidConfigurationException e) {}
         
         if(itemStack == null) {

@@ -1,7 +1,6 @@
 package com.github.kory33.bukkitserializationinterface;
 
 import java.util.Map;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -28,9 +27,17 @@ public class Util {
         return jsonString;
     }
     
-    static public ItemStack deserializeItem(String serial) throws InvalidConfigurationException {
+    static public ItemStack deserializeItem(String serial, Logger logger) throws InvalidConfigurationException {
+        JSONObject jsonSerialObject = new JSONObject(serial);
         YamlConfiguration virtualConfiguration = new YamlConfiguration();
-        virtualConfiguration.loadFromString(serial);
+        
+        String prettyJsonString = jsonSerialObject.toString(4);
+        
+        if(logger != null) {
+            logger.info("prettyJson data: " + prettyJsonString);
+        }
+        
+        virtualConfiguration.loadFromString(prettyJsonString);
         return virtualConfiguration.getItemStack(ITEMSTACK_TOP_KEY);
     }
 }
