@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.kory33</groupId>
     <artifactId>BukkitSerializationInterface</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>Bukkit-Serialization-Interface</name>
     <description>An interface that opens conversion between bukkit entity and serial strings</description>
     <repositories>

@@ -26,6 +26,11 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
     }
     
     private boolean deserializeItemStack(CommandSender sender, List<String> args) {
+        if(!sender.hasPermission("serialinterface.deserializeitem")){
+            sender.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
+            return true;
+        }
+        
         if(args.size() != 2) {
             return false;
         }
@@ -60,6 +65,11 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
     }
     
     private boolean serializeItemStack(CommandSender sender, List<String> listArgs) {
+        if(!(sender.hasPermission("serialinterface.serializeitem"))) {
+            sender.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
+            return true;
+        }
+        
         if(!(sender instanceof Player)) {
             sender.sendMessage("The command is only available for players.");
             return true;
@@ -69,7 +79,7 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
         
         if(itemStack == null) {
             playerSender.sendMessage(ChatColor.RED +
-                    "Could not get item to be serialized. It should be in your main hand.");
+                    "Could not get item to be seriralized. It should be in your main hand.");
             return true;
         }
         playerSender.sendMessage(Util.serializeItem(itemStack, this.plugin.getLogger()));
@@ -81,6 +91,11 @@ public class SerializationInterfaceCommandExecutor implements CommandExecutor {
         List<String> listArgs = new LinkedList<String>(Arrays.asList(args));
         if(listArgs.isEmpty()) {
             return false;
+        }
+        
+        if(!sender.hasPermission("serialinterface.usecommand")) {
+            sender.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
+            return true;
         }
         
         String commandName = listArgs.remove(0);
